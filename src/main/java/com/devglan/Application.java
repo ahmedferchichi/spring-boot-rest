@@ -21,6 +21,7 @@ public class Application {
     @Bean
     public CommandLineRunner init(UserDao userDao){
         return args -> {
+            // create dev branch local
             User user1 = new User();
             user1.setFirstName("Devglan");
             user1.setLastName("Devglan");
