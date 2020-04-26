@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user")
 public class User {
+    //branch-11
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
