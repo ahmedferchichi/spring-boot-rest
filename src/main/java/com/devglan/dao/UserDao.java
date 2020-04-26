@@ -9,4 +9,5 @@ public interface UserDao extends CrudRepository<User, Integer> {
 
     User findByUsername(String username);
     // branch-10
+    // branch-12
 }
