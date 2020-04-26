@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface UserDao extends CrudRepository<User, Integer> {
 
     User findByUsername(String username);
+    // branch-12
 }
