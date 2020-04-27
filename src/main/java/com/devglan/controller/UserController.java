@@ -37,6 +37,12 @@ public class UserController {
     public ApiResponse<UserDto> update(@RequestBody UserDto userDto) {
         return new ApiResponse<>(HttpStatus.OK.value(), "User updated successfully.",userService.update(userDto));
     }
+    
+    @DeleteMapping("/{id}")
+    public ApiResponse<Void> delete(@PathVariable int id) {
+    	userService.delete(id);
+        return new ApiResponse<>(HttpStatus.OK.value(), "User deleted successfully.",null);
+    }
 
 
 

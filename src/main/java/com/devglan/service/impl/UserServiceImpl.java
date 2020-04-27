@@ -37,6 +37,11 @@ public class UserServiceImpl implements UserService {
 		Optional<User> optionalUser = userDao.findById(id);
 		return optionalUser.isPresent() ? optionalUser.get() : null;
 	}
+	
+	@Override
+	public void delete(int id) {
+		userDao.deleteById(id);
+	}
 
     @Override
     public UserDto update(UserDto userDto) {
