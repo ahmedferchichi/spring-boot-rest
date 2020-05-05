@@ -1,14 +1,13 @@
-package com.devglan.model;
+package com.devglan.model.user;
 
 public class UserDto {
 
     private int id;
     private String firstName;
     private String lastName;
-    private String username;
+    private String email;
     private String password;
-    private int age;
-    private long salary;
+    private String typeUser;
 
     public int getId() {
         return id;
@@ -34,12 +33,12 @@ public class UserDto {
         this.lastName = lastName;
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -50,19 +49,11 @@ public class UserDto {
         this.password = password;
     }
 
-    public int getAge() {
-        return age;
+    public String getTypeUser() {
+        return typeUser;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public long getSalary() {
-        return salary;
-    }
-
-    public void setSalary(long salary) {
-        this.salary = salary;
+    public void setTypeUser(String typeUser) {
+        this.typeUser = typeUser;
     }
 }

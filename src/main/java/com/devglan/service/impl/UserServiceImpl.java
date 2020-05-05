@@ -1,8 +1,8 @@
 package com.devglan.service.impl;
 
 import com.devglan.dao.UserDao;
-import com.devglan.model.User;
-import com.devglan.model.UserDto;
+import com.devglan.model.user.User;
+import com.devglan.model.user.UserDto;
 import com.devglan.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +27,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 
-	@Override
+	/*@Override
 	public User findOne(String username) {
 		return userDao.findByUsername(username);
-	}
+	}*/
 
 	@Override
 	public User findById(int id) {
@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
     public UserDto update(UserDto userDto) {
         User user = findById(userDto.getId());
         if(user != null) {
-            BeanUtils.copyProperties(userDto, user, "password", "username");
+            BeanUtils.copyProperties(userDto, user, "password", "email");
             userDao.save(user);
         }
         return userDto;
@@ -56,12 +56,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User save(UserDto user) {
 	    User newUser = new User();
-	    newUser.setUsername(user.getUsername());
+	    newUser.setEmail(user.getEmail());
 	    newUser.setFirstName(user.getFirstName());
 	    newUser.setLastName(user.getLastName());
 	    newUser.setPassword(user.getPassword());
-		newUser.setAge(user.getAge());
-		newUser.setSalary(user.getSalary());
+		newUser.setTypeUser(user.getTypeUser());
         return userDao.save(newUser);
     }
 }

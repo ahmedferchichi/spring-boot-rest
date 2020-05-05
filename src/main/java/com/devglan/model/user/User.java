@@ -1,9 +1,10 @@
-package com.devglan.model;
+package com.devglan.model.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
+//TODO lombok
 @Entity
 @Table(name = "user")
 public class User {
@@ -16,14 +17,25 @@ public class User {
     @Column
     private String lastName;
     @Column
-    private String username;
+    private String email;
     @Column
     @JsonIgnore
     private String password;
     @Column
-    private long salary;
-    @Column
-    private int age;
+    //TODO enum
+    private String typeUser;
+
+    public User() {
+    }
+
+    public User(int id, String firstName, String lastName, String email, String password, String typeUser) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.typeUser = typeUser;
+    }
 
     public int getId() {
         return id;
@@ -49,12 +61,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -65,19 +77,12 @@ public class User {
         this.password = password;
     }
 
-    public long getSalary() {
-        return salary;
+    public String getTypeUser() {
+        return typeUser;
     }
 
-    public void setSalary(long salary) {
-        this.salary = salary;
+    public void setTypeUser(String typeUser) {
+        this.typeUser = typeUser;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }
