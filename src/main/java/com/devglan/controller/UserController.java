@@ -1,8 +1,8 @@
 package com.devglan.controller;
 
 import com.devglan.model.ApiResponse;
-import com.devglan.model.User;
-import com.devglan.model.UserDto;
+import com.devglan.model.user.User;
+import com.devglan.model.user.UserDto;
 import com.devglan.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,11 +37,11 @@ public class UserController {
     public ApiResponse<UserDto> update(@RequestBody UserDto userDto) {
         return new ApiResponse<>(HttpStatus.OK.value(), "User updated successfully.",userService.update(userDto));
     }
-
+    
     @DeleteMapping("/{id}")
     public ApiResponse<Void> delete(@PathVariable int id) {
-        userService.delete(id);
-        return new ApiResponse<>(HttpStatus.OK.value(), "User deleted successfully.", null);
+    	userService.delete(id);
+        return new ApiResponse<>(HttpStatus.OK.value(), "User deleted successfully.",null);
     }
 
 
