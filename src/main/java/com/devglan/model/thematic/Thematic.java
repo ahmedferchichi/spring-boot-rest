@@ -1,9 +1,14 @@
 package com.devglan.model.thematic;
 
+import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "thematic")
+@AllArgsConstructor @NoArgsConstructor
+@Getter @Setter
+@EqualsAndHashCode @ToString
 public class Thematic {
 
     @Id
@@ -12,27 +17,4 @@ public class Thematic {
     @Column
     private String title;
 
-    public Thematic() {
-    }
-
-    public Thematic(int id, String title) {
-        this.id = id;
-        this.title = title;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 }
