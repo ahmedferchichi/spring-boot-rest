@@ -1,8 +1,7 @@
 package com.devglan.service;
 
+// this static must add manually !
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.devglan.dao.UserDao;
