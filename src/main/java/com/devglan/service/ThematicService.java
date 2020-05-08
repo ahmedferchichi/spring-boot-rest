@@ -8,6 +8,7 @@ import java.util.List;
 public interface ThematicService {
 
     Thematic save( ThamaticDto thematic);
+
     List<Thematic> findAll();
 
     Thematic findOne(String title);
