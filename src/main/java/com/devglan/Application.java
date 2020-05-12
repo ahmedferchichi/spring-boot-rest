@@ -15,7 +15,7 @@ public class Application {
     }
 
     @Bean
-    public CommandLineRunner init(UserDao userDao){
+    public CommandLineRunner init(UserDao userDao) {
         return args -> {
 
             User user1 = new User();

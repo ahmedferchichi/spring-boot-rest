@@ -19,27 +19,27 @@ public class ThematicController {
     private ThematicService thematicService;
 
     @PostMapping
-    public ApiResponse<Thematic> saveThematic(@RequestBody ThamaticDto thematic){
+    public ApiResponse<Thematic> saveThematic(@RequestBody ThamaticDto thematic) {
         return new ApiResponse<>(HttpStatus.OK.value(), "Thematic saved successfully.", thematicService.save(thematic));
     }
 
     @GetMapping
-    public ApiResponse<List<Thematic>> listThematic(){
+    public ApiResponse<List<Thematic>> listThematic() {
         return new ApiResponse<>(HttpStatus.OK.value(), "Thematic list fetched successfully.", thematicService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ApiResponse<Thematic> getThematic(@PathVariable int id){
-        return new ApiResponse<>(HttpStatus.OK.value(),"Thematic fetched successfully.", thematicService.findById(id));
+    public ApiResponse<Thematic> getThematic(@PathVariable int id) {
+        return new ApiResponse<>(HttpStatus.OK.value(), "Thematic fetched successfully.", thematicService.findById(id));
     }
 
     @PutMapping("/{id}")
-    public ApiResponse<ThamaticDto> updateThematic(@RequestBody ThamaticDto thematic){
+    public ApiResponse<ThamaticDto> updateThematic(@RequestBody ThamaticDto thematic) {
         return new ApiResponse<>(HttpStatus.OK.value(), "Thematic updated successfully.", thematicService.update(thematic));
     }
 
     @DeleteMapping("/{id}")
-    public ApiResponse<Void> deleteThematic(@PathVariable int id){
+    public ApiResponse<Void> deleteThematic(@PathVariable int id) {
         thematicService.delete(id);
         return new ApiResponse<>(HttpStatus.OK.value(), "Thematic deleted successfully.", null);
     }

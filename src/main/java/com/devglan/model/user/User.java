@@ -7,13 +7,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
-@AllArgsConstructor @NoArgsConstructor
-@Getter @Setter
-@EqualsAndHashCode @ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class User {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
     private String firstName;

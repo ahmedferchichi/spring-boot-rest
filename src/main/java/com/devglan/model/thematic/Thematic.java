@@ -6,9 +6,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "thematic")
-@AllArgsConstructor @NoArgsConstructor
-@Getter @Setter
-@EqualsAndHashCode @ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class Thematic {
 
     @Id

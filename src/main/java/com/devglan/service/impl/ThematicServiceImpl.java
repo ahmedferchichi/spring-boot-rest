@@ -26,7 +26,6 @@ public class ThematicServiceImpl implements ThematicService {
         return list;
     }
 
-
     @Override
     public Thematic findOne(String title) {
         return thematicRepository.findByTitle(title);
@@ -41,7 +40,7 @@ public class ThematicServiceImpl implements ThematicService {
     @Override
     public ThamaticDto update(ThamaticDto thematicDto) {
         Thematic thematic = findById(thematicDto.getId());
-        if(thematic != null) {
+        if (thematic != null) {
             BeanUtils.copyProperties(thematicDto, thematic);
             thematicRepository.save(thematic);
         }
