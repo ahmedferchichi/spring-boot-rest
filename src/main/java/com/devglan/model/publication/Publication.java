@@ -1,11 +1,12 @@
 package com.devglan.model.publication;
 
+import com.devglan.model.thematic.Thematic;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "publication")
@@ -31,6 +32,6 @@ public class Publication {
     private Date date;
     @ElementCollection
     @Column
-    private List<String> thematics;
+    private Collection<Thematic> thematics;
 
 }
