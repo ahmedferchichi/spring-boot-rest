@@ -2,13 +2,19 @@ package com.devglan;
 
 import com.devglan.dao.UserDao;
 import com.devglan.model.user.User;
+import com.devglan.service.FilesStorageService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import javax.annotation.Resource;
+
 @SpringBootApplication
 public class Application {
+
+    @Resource
+    FilesStorageService storageService;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -33,6 +39,9 @@ public class Application {
             user2.setPassword("john");
             user2.setTypeUser("M");
             userDao.save(user2);
+
+            storageService.deleteAll();
+            storageService.init();
         };
     }
 
