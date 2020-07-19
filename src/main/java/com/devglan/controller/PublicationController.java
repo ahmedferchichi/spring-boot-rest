@@ -4,6 +4,7 @@ import com.devglan.model.ApiResponse;
 import com.devglan.model.publication.Publication;
 import com.devglan.model.publication.PublicationDto;
 import com.devglan.service.PublicationService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin
+@Api(value = "SwaggerPublications", description = "REST APIs related to publications !!!!")
 @RestController
 @RequestMapping("/publications")
 public class PublicationController {

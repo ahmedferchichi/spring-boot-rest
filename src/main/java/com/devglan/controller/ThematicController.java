@@ -4,6 +4,7 @@ import com.devglan.model.ApiResponse;
 import com.devglan.model.thematic.ThamaticDto;
 import com.devglan.model.thematic.Thematic;
 import com.devglan.service.ThematicService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin
+@Api(value = "SwaggerThematic", description = "REST APIs related to thematic !!!!")
 @RestController
 @RequestMapping("/thematic")
 public class ThematicController {

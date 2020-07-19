@@ -4,6 +4,7 @@ import com.devglan.model.ApiResponse;
 import com.devglan.model.user.User;
 import com.devglan.model.user.UserDto;
 import com.devglan.service.UserService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
+@Api(value = "SwaggerUsers", description = "REST APIs related to users !!!!")
 @RestController
 @RequestMapping("/users")
 public class UserController {
